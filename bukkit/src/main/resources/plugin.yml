@@ -1,0 +1,4 @@
+name: MinecraftPackageTool
+version: ${version}
+main: dev.titanlabs.mpt.bukkit.PackageBukkitPlugin
+api-version: 1.16
