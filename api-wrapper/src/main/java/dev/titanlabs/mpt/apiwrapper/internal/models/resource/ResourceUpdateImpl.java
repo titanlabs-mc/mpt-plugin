@@ -1,10 +1,9 @@
 package dev.titanlabs.mpt.apiwrapper.internal.models.resource;
 
-import com.google.common.collect.Sets;
 import dev.titanlabs.mpt.apiwrapper.api.models.resource.ResourceUpdate;
 import dev.titanlabs.mpt.apiwrapper.api.models.resource.ResourceUpdateFile;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import java.util.Set;
 
 public class ResourceUpdateImpl implements ResourceUpdate {
@@ -23,13 +22,13 @@ public class ResourceUpdateImpl implements ResourceUpdate {
         return this.releaseTime;
     }
 
-    @NotNull
+    @Nonnull
     @Override
     public Set<ResourceUpdateFile> getFiles() {
-        return Sets.newHashSet();
+        return this.resourceUpdateFiles;
     }
 
-    @NotNull
+    @Nonnull
     @Override
     public String getVersion() {
         return this.version;

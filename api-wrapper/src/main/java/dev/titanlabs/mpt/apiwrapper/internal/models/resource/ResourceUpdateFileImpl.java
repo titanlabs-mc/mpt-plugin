@@ -1,8 +1,8 @@
 package dev.titanlabs.mpt.apiwrapper.internal.models.resource;
 
 import dev.titanlabs.mpt.apiwrapper.api.models.resource.ResourceUpdateFile;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import java.util.Set;
 
 public class ResourceUpdateFileImpl implements ResourceUpdateFile {
@@ -16,13 +16,13 @@ public class ResourceUpdateFileImpl implements ResourceUpdateFile {
         this.requiresFileChanges = requiresFileChanges;
     }
 
-    @NotNull
+    @Nonnull
     @Override
     public Set<String> getMinecraftVersions() {
         return this.minecraftVersions;
     }
 
-    @NotNull
+    @Nonnull
     @Override
     public String getFileId() {
         return this.fileId;

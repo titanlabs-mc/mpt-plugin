@@ -2,7 +2,6 @@ package dev.titanlabs.mpt.apiwrapper.internal.models.resource;
 
 import dev.titanlabs.mpt.apiwrapper.api.models.resource.Resource;
 import dev.titanlabs.mpt.apiwrapper.api.models.resource.ResourceUpdate;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -27,7 +26,7 @@ public class ResourceImpl implements Resource {
         this.dependencyIds = dependencyIds;
     }
 
-    @NotNull
+    @Nonnull
     @Override
     public String getRepository() {
         return this.repository;

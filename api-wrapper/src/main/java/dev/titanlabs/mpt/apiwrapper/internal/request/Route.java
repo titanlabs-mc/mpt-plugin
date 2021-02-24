@@ -4,7 +4,7 @@ public class Route {
 
     public static final Route CLIENT_META = new Route("/data/self/metadata");
     public static final Route PACKAGE_META = new Route("/data/plugins/<pluginId>/metadata");
-    public static final Route PACKAGE_FILE = new Route("/data/plugins/<pluginId>/file");
+    public static final Route PACKAGE_FILE = new Route("/data/files/<fileId>");
 
     private final String route;
     private final int parameterCount;

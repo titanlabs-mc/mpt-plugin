@@ -24,7 +24,7 @@ subprojects {
     }
 
     dependencies {
-        implementation("javax.annotation:javax.annotation-api:1.3.2")
+        implementation("com.google.code.findbugs:jsr305:3.0.2")
         compileOnly("org.projectlombok:lombok:1.18.12")
         annotationProcessor("org.projectlombok:lombok:1.18.12")
     }
