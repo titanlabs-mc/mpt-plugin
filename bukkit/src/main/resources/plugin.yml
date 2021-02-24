@@ -2,3 +2,12 @@ name: MinecraftPackageTool
 version: ${version}
 main: dev.titanlabs.mpt.bukkit.PackageBukkitPlugin
 api-version: 1.16
+
+commands:
+  mpt:
+    aliases: []
+    description: "The main command of the plugin."
+
+permissions:
+  mpt.admin:
+    description: "The main permission of the plugin."
