@@ -5,10 +5,13 @@ import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 import org.yaml.snakeyaml.representer.Representer;
+import sun.misc.IOUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.UnaryOperator;
@@ -70,48 +73,21 @@ public class Config {
         return new Yaml(new SafeConstructor(), new Representer(), new DumperOptions(), new LoaderOptions());
     }
 
-    // taken from bukkit
-    private InputStream getResource() throws IOException {
-        /*URL url = getClassLoader().getResource(this.name);
-        if (url == null) {
-            return null;
-        }
-        URLConnection connection = url.openConnection();
-        connection.setUseCaches(false);
-        return connection.getInputStream();*/
-        return null;
+    private InputStream getResource() {
+        return this.getClass().getClassLoader().getResourceAsStream(this.name);
     }
 
-    // taken from bukkit
     private void saveResource() {
-        /*InputStream in = getResource(resourcePath);
-        if (in == null) {
-            throw new IllegalArgumentException("The embedded resource '" + resourcePath + "' cannot be found in " + file);
-        }
-
-        File outFile = new File(dataFolder, resourcePath);
-        int lastIndex = resourcePath.lastIndexOf('/');
-        File outDir = new File(dataFolder, resourcePath.substring(0, lastIndex >= 0 ? lastIndex : 0));
-
-        if (!outDir.exists()) {
-            outDir.mkdirs();
-        }
-
-        try {
-            if (!outFile.exists() || replace) {
-                OutputStream out = new FileOutputStream(outFile);
-                byte[] buf = new byte[1024];
-                int len;
-                while ((len = in.read(buf)) > 0) {
-                    out.write(buf, 0, len);
-                }
-                out.close();
-                in.close();
-            } else {
-                logger.log(Level.WARNING, "Could not save " + outFile.getName() + " to " + outFile + " because " + outFile.getName() + " already exists.");
+        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(this.name);
+        if (inputStream == null) {
+            // TODO: log
+        } else {
+            try {
+                // TODO write parent directories, if necessary
+                Files.write(this.file.toPath(), IOUtils.readAllBytes(inputStream), StandardOpenOption.CREATE);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException ex) {
-            logger.log(Level.SEVERE, "Could not save " + outFile.getName() + " to " + outFile, ex);
-        }*/
+        }
     }
 }
