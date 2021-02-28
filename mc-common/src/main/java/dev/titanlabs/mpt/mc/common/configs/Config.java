@@ -24,7 +24,7 @@ public class Config {
         this.name = name;
         this.file = file;
         this.yaml = new Yaml();
-        this.saveResource();
+        this.createResource();
         this.load();
     }
 
@@ -81,6 +81,12 @@ public class Config {
             String key = entry.getKey().toString();
             Object value = entry.getValue();
             this.map.put(key, value);
+        }
+    }
+
+    private void createResource() {
+        if (!Files.exists(this.file.toPath())) {
+            this.saveResource();
         }
     }
 

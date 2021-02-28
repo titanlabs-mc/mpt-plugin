@@ -3,7 +3,6 @@ package dev.titanlabs.mpt.mc.bukkit;
 import dev.titanlabs.mpt.mc.bukkit.command.BukkitCommandSender;
 import dev.titanlabs.mpt.mc.common.MptPlatform;
 import dev.titanlabs.mpt.mc.common.MptPlugin;
-import dev.titanlabs.mpt.mc.common.configs.keys.ConfigKeys;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,10 +16,7 @@ public final class PackageBukkitPlugin extends JavaPlugin implements MptPlugin {
 
     @Override
     public void onEnable() {
-        int configVersion = ConfigKeys.CONFIG_VERSION.get(); // testing
-        System.out.println(configVersion);
-        String test = ConfigKeys.TEST.get();
-        System.out.println(test);
+
     }
 
     @Override

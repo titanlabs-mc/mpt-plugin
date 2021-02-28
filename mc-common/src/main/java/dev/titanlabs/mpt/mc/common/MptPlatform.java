@@ -18,7 +18,7 @@ public class MptPlatform {
     public MptPlatform() {
         this.dataFolder = this.createDataFolder();
         this.scheduler = new Scheduler();
-        this.commandController = new CommandController();
+        this.commandController = new CommandController(this);
         this.configController = new ConfigController(this);
     }
 
