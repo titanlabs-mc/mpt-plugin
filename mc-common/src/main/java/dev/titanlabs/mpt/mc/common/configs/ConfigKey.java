@@ -1,25 +1,23 @@
 package dev.titanlabs.mpt.mc.common.configs;
 
-import dev.titanlabs.mpt.mc.common.configs.keys.AbstractKeys;
-
 import java.util.function.Supplier;
 
 public class ConfigKey<T> implements Supplier<T> {
-    private final Config config;
+    private final Supplier<KeysHolder> keysHolder;
     private final String key;
 
-    public ConfigKey(Config config, String key) {
-        this.config = config;
+    public ConfigKey(Supplier<KeysHolder> keysHolder, String key) {
+        this.keysHolder = keysHolder;
         this.key = key;
     }
 
-    public static <U> ConfigKey<U> of(AbstractKeys abstractKeys, String key) {
-        return new ConfigKey<>(abstractKeys.getConfig(), key);
+    public static <U> ConfigKey<U> of(Supplier<KeysHolder> keysHolder, String key) {
+        return new ConfigKey<>(keysHolder, key);
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public T get() {
-        return (T) this.config.get(this.key);
+        return (T) this.keysHolder.get().getConfig().get(this.key);
     }
 }

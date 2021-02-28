@@ -1,8 +1,10 @@
 package dev.titanlabs.mpt.apiwrapper.internal.models.resource;
 
 import dev.titanlabs.mpt.apiwrapper.api.models.resource.ResourceUpdateFile;
+import dev.titanlabs.mpt.apiwrapper.api.request.ApiRequest;
 
 import javax.annotation.Nonnull;
+import java.io.File;
 import java.util.Set;
 
 public class ResourceUpdateFileImpl implements ResourceUpdateFile {
@@ -14,6 +16,11 @@ public class ResourceUpdateFileImpl implements ResourceUpdateFile {
         this.minecraftVersions = minecraftVersions;
         this.fileId = fileId;
         this.requiresFileChanges = requiresFileChanges;
+    }
+
+    @Override
+    public ApiRequest<File> getFile() {
+        return null;
     }
 
     @Nonnull

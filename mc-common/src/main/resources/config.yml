@@ -1,1 +1,3 @@
 config-version: 1
+
+test: "This is for testing reloading."

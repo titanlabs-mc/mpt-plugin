@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.yaml:snakeyaml:1.28");
+    implementation("org.yaml:snakeyaml:1.28");
 }
 
 tasks.processResources {

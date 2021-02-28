@@ -19,6 +19,8 @@ public final class PackageBukkitPlugin extends JavaPlugin implements MptPlugin {
     public void onEnable() {
         int configVersion = ConfigKeys.CONFIG_VERSION.get(); // testing
         System.out.println(configVersion);
+        String test = ConfigKeys.TEST.get();
+        System.out.println(test);
     }
 
     @Override
