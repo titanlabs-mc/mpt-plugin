@@ -2,7 +2,7 @@ package dev.titanlabs.mpt.mc.common.commands.children;
 
 import dev.titanlabs.mpt.mc.common.MptPlatform;
 import dev.titanlabs.mpt.mc.common.commands.Command;
-import dev.titanlabs.mpt.mc.common.commands.sender.CommandSender;
+import dev.titanlabs.mpt.mc.common.commands.sender.MptCommandSender;
 import dev.titanlabs.mpt.mc.common.configs.keys.ConfigKeys;
 
 public class ReloadCommand extends Command {
@@ -13,7 +13,7 @@ public class ReloadCommand extends Command {
     }
 
     @Override
-    public void onCommand(CommandSender commandSender, String[] args) {
+    public void onCommand(MptCommandSender commandSender, String[] args) {
         System.out.println(ConfigKeys.TEST.get());
         this.platform.getConfigController().reload("config.yml").join();
         System.out.println(ConfigKeys.TEST.get());

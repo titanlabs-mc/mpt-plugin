@@ -2,7 +2,7 @@ package dev.titanlabs.mpt.mc.common.commands;
 
 import dev.titanlabs.mpt.mc.common.MptPlatform;
 import dev.titanlabs.mpt.mc.common.commands.arguments.Argument;
-import dev.titanlabs.mpt.mc.common.commands.sender.CommandSender;
+import dev.titanlabs.mpt.mc.common.commands.sender.MptCommandSender;
 import dev.titanlabs.mpt.mc.common.enums.Flag;
 
 import java.util.*;
@@ -53,5 +53,5 @@ public abstract class Command {
         return this.aliases.contains(alias);
     }
 
-    public abstract void onCommand(CommandSender commandSender, String[] args);
+    public abstract void onCommand(MptCommandSender commandSender, String[] args);
 }

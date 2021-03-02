@@ -3,7 +3,7 @@ package dev.titanlabs.mpt.mc.common.commands;
 import dev.titanlabs.mpt.mc.common.MptPlatform;
 import dev.titanlabs.mpt.mc.common.commands.children.InstallCommand;
 import dev.titanlabs.mpt.mc.common.commands.children.ReloadCommand;
-import dev.titanlabs.mpt.mc.common.commands.sender.CommandSender;
+import dev.titanlabs.mpt.mc.common.commands.sender.MptCommandSender;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -23,7 +23,7 @@ public class CommandController {
         );
     }
 
-    public void executeCommand(CommandSender commandSender, String[] args) {
+    public void executeCommand(MptCommandSender commandSender, String[] args) {
         if (!commandSender.hasPermission(PERMISSION)) {
             // TODO: send message
             return;

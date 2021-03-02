@@ -1,6 +1,6 @@
 package dev.titanlabs.mpt.mc.common.commands.sender;
 
-public interface CommandSender {
+public interface MptCommandSender {
 
     void sendMessage(String message);
 
