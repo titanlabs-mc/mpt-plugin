@@ -1,0 +1,4 @@
+name: MPT
+version: @version@
+main: dev.titanlabs.mpt.BungeePlugin
+description: change me :)

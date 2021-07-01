@@ -1,31 +1,32 @@
 plugins {
-    java
+    `java-library`
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
-buildscript {
-    repositories {
-        jcenter()
-    }
+group = "dev.titanlabs"
+version = "1.0-SNAPSHOT"
 
-    dependencies {
-        classpath("com.github.jengelman.gradle.plugins:shadow:6.1.0")
-    }
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 subprojects {
-    apply(plugin = "java")
-    apply(plugin = "com.github.johnrengelman.shadow")
+    apply {
+        plugin("java-library")
+        plugin("maven-publish")
+        plugin("com.github.johnrengelman.shadow")
+    }
 
-    group = "dev.titanlabs.mpt"
-    version = "0.1.0"
+    group = project.group
+    version = project.version
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 
     repositories {
         mavenCentral()
-    }
-
-    dependencies {
-        implementation("com.google.code.findbugs:jsr305:3.0.2")
-        compileOnly("org.projectlombok:lombok:1.18.12")
-        annotationProcessor("org.projectlombok:lombok:1.18.12")
     }
 }

@@ -1,0 +1,6 @@
+name: MPT
+version: @version@
+main: dev.titanlabs.mpt.SpigotPlugin
+api-version: 1.17
+authors: [ Zak, Hyfe ]
+description: change me :)
