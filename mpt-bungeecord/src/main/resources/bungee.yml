@@ -1,4 +1,4 @@
 name: MPT
 version: @version@
-main: dev.titanlabs.mpt.BungeePlugin
+main: dev.titanlabs.mpt.plugin.BungeePlugin
 description: change me :)

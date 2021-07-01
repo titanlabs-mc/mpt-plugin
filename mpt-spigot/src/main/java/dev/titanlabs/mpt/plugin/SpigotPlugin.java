@@ -1,12 +1,13 @@
-package dev.titanlabs.mpt;
+package dev.titanlabs.mpt.plugin;
 
-import net.md_5.bungee.api.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
 
-public final class BungeePlugin extends Plugin {
+public final class SpigotPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+
     }
 
     @Override

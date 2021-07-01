@@ -1,6 +1,6 @@
 name: MPT
 version: @version@
-main: dev.titanlabs.mpt.SpigotPlugin
+main: dev.titanlabs.mpt.plugin.SpigotPlugin
 api-version: 1.17
 authors: [ Zak, Hyfe ]
 description: change me :)

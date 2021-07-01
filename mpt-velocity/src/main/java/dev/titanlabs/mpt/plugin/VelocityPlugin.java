@@ -1,4 +1,4 @@
-package dev.titanlabs.mpt;
+package dev.titanlabs.mpt.plugin;
 
 import com.google.inject.Inject;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
